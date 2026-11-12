@@ -86,21 +86,20 @@
 <div class="hero wrap">
   <div>
     <h1>Hand-crafted watch faces for <em>Garmin</em> watches</h1>
-    <p>Original designs built for outdoor athletes. Buy once, activate in two minutes —
-       your personal activation code is emailed to you instantly.</p>
-    <div class="price"><b>$7.00</b><s>$10</s><span class="note">launch price · one-time payment</span></div>
-    <!-- TODO: Lemon Squeezy 商品链接建好后替换下面的 # -->
-    <a class="btn" href="#">Buy now — instant delivery</a>
-    <p class="note">Secure checkout · Visa / Mastercard / Apple Pay / Google Pay</p>
+    <p>Original designs built for outdoor athletes. Each face is activated with a
+       personal code that is emailed to you instantly.</p>
+    <div class="price"><b>$7.00</b><span class="note">every face · one-time payment</span></div>
+    <!-- 购买入口：LS 商品上线后在此恢复 <a class="btn" href="#">Buy now — instant delivery</a> 及支付方式行 -->
+    <a class="btn" href="#collection">Browse the collection</a>
   </div>
   <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=close-up%20product%20photo%20of%20a%20premium%20sport%20smartwatch%20with%20a%20dark%20custom%20watch%20face%2C%20heart%20rate%20and%20altitude%20data%20fields%2C%20matte%20black%20case%2C%20dramatic%20studio%20lighting%20on%20dark%20background%2C%20high-end%20tech%20product%20photography&image_size=landscape_4_3" alt="Garmin watch face preview">
 </div>
 
 <section id="collection">
   <div class="wrap">
-    <h2>The collection — all faces, one price</h2>
-    <p style="color:var(--muted);margin-bottom:28px">Every face is $7.00. Click a face to buy —
-       you'll pick it in the checkout and enter your 6-digit device code.</p>
+    <h2>The collection — every face, one price</h2>
+    <p style="color:var(--muted);margin-bottom:28px">Each design is $7.00, activated with a
+       personal code delivered to your email.</p>
     <div class="grid" id="faceGrid"></div>
     <p class="note" style="margin-top:18px">
       <!-- TODO: Lemon Squeezy 商品链接建好后替换 BUY_URL -->
@@ -118,8 +117,6 @@
             </div>
             <div class="meta">
               <b>YuanCao ${id}</b>
-              <div class="row"><span>$7.00</span>
-                <a class="mini" href="${BUY_URL}">Buy</a></div>
             </div>
           </div>`).join("");
       </script>
