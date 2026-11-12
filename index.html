@@ -43,6 +43,17 @@
   .split li{padding:8px 0;color:var(--muted)}
   .split li::before{content:"✓ ";color:var(--accent);font-weight:700}
   .faq{max-width:760px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .card:hover{border-color:var(--accent)}
+  .thumb{aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+  .thumb span{font-size:40px;font-weight:800;color:rgba(255,255,255,.55);letter-spacing:2px}
+  .meta{padding:14px 16px}
+  .meta b{display:block;font-size:14px;margin-bottom:10px}
+  .meta .row{display:flex;justify-content:space-between;align-items:center}
+  .mini{background:var(--accent);color:#111;font-weight:700;font-size:13px;
+        padding:6px 16px;border-radius:8px;text-decoration:none}
+  @media (max-width:760px){.grid{grid-template-columns:1fr 1fr}}
   .faq details{background:var(--bg2);border:1px solid var(--line);border-radius:10px;
                padding:16px 20px;margin-bottom:12px}
   .faq summary{cursor:pointer;font-weight:600}
@@ -84,6 +95,37 @@
   </div>
   <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=close-up%20product%20photo%20of%20a%20premium%20sport%20smartwatch%20with%20a%20dark%20custom%20watch%20face%2C%20heart%20rate%20and%20altitude%20data%20fields%2C%20matte%20black%20case%2C%20dramatic%20studio%20lighting%20on%20dark%20background%2C%20high-end%20tech%20product%20photography&image_size=landscape_4_3" alt="Garmin watch face preview">
 </div>
+
+<section id="collection">
+  <div class="wrap">
+    <h2>The collection — all faces, one price</h2>
+    <p style="color:var(--muted);margin-bottom:28px">Every face is $7.00. Click a face to buy —
+       you'll pick it in the checkout and enter your 6-digit device code.</p>
+    <div class="grid" id="faceGrid"></div>
+    <p class="note" style="margin-top:18px">
+      <!-- TODO: Lemon Squeezy 商品链接建好后替换 BUY_URL -->
+      <script>
+        const BUY_URL = "#";  // LS 商品链接（含变体预选参数）
+        // 表盘编号清单：与 seed 表同步；新增表盘在此加一行编号即可
+        const ids = ["0002","0003","0004","0005","0006","0007",
+                     "0008","0009","0010","0011","0012","0013","0014","0015"];
+        const hue = n => (parseInt(n) * 47) % 360;
+        document.getElementById("faceGrid").innerHTML = ids.map(id => `
+          <div class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,
+                 hsl(${hue(id)},45%,18%), hsl(${hue(id)},60%,32%))">
+              <span>${id}</span>
+            </div>
+            <div class="meta">
+              <b>YuanCao ${id}</b>
+              <div class="row"><span>$7.00</span>
+                <a class="mini" href="${BUY_URL}">Buy</a></div>
+            </div>
+          </div>`).join("");
+      </script>
+    </p>
+  </div>
+</section>
 
 <section id="how">
   <div class="wrap">
