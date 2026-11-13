@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy Activation Code — YuanCao Watch Faces</title>
+<meta name="description" content="Buy a personal activation code for your YuanCao Garmin watch face. Enter the 6-digit device code from the red watermark — the code is emailed to you automatically.">
+<style>
+  :root{
+    --bg:#0d1117; --bg2:#161b22; --fg:#e6edf3; --muted:#8b949e;
+    --accent:#f0b429; --line:#21262d; --max:640px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font:16px/1.7 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);padding:18px 0}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-weight:700;letter-spacing:.5px;color:var(--fg);text-decoration:none}
+  .brand span{color:var(--accent)}
+  nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:14px}
+  nav a:hover{color:var(--fg)}
+  h1{font-size:30px;line-height:1.25;padding:48px 0 8px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .sub{color:var(--muted);margin-bottom:32px;font-size:15px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:28px}
+  label{display:block;font-weight:600;font-size:14px;margin:18px 0 8px}
+  label:first-child{margin-top:0}
+  select,input[type=text]{
+    width:100%;padding:12px 14px;font-size:16px;color:var(--fg);
+    background:var(--bg);border:1px solid var(--line);border-radius:8px;outline:none}
+  select:focus,input[type=text]:focus{border-color:var(--accent)}
+  input::placeholder{color:#484f58}
+  .hint{color:var(--muted);font-size:13px;margin-top:6px}
+  .price-row{display:flex;justify-content:space-between;align-items:center;
+             margin:20px 0;padding-top:18px;border-top:1px solid var(--line)}
+  .price-row b{font-size:15px}
+  .price{font-size:30px;font-weight:800;color:var(--accent)}
+  button{
+    width:100%;padding:14px;font-size:16px;font-weight:700;color:#111;
+    background:var(--accent);border:none;border-radius:8px;cursor:pointer}
+  button:hover{filter:brightness(1.08)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .msg{margin-top:14px;font-size:14px;color:#f8514b;min-height:20px}
+  .steps{margin-top:28px;color:var(--muted);font-size:14px}
+  .steps b{color:var(--fg)}
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0;color:var(--muted);font-size:14px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">YuanCao<span>&nbsp;Watch Faces</span></a>
+    <nav><a href="mailto:yuancao000@163.com">Support</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Buy your <em>activation code</em></h1>
+  <p class="sub">Secure checkout powered by Paddle. Your personal activation code
+     is emailed to you automatically within minutes of payment.</p>
+
+  <div class="card">
+    <label for="watch">1 · Choose your watch face</label>
+    <select id="watch">
+      <option value="0002">Watch face #0002</option>
+      <option value="0003">Watch face #0003</option>
+      <option value="0004">Watch face #0004</option>
+      <option value="0005">Watch face #0005</option>
+      <option value="0006">Watch face #0006</option>
+      <option value="0007">Watch face #0007</option>
+      <option value="0008">Watch face #0008</option>
+      <option value="0009">Watch face #0009</option>
+      <option value="0010">Watch face #0010</option>
+      <option value="0011">Watch face #0011</option>
+      <option value="0012">Watch face #0012</option>
+      <option value="0013">Watch face #0013</option>
+      <option value="0014">Watch face #0014</option>
+      <option value="0015">Watch face #0015</option>
+    </select>
+
+    <label for="code">2 · Enter your 6-digit device code</label>
+    <input type="text" id="code" inputmode="numeric" maxlength="6"
+           placeholder="e.g. 123456" autocomplete="off">
+    <div class="hint">Switch to the watch face on your watch — a <b>red watermark</b>
+       with a 6-digit number is shown until activation.</div>
+
+    <div class="price-row">
+      <b>Personal activation code · one device · lifetime updates</b>
+      <span class="price">$10.00</span>
+    </div>
+
+    <button id="buyBtn" onclick="buy()">Continue to secure checkout</button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <div class="steps">
+    <b>After payment:</b> your activation code is sent to the email address on
+    your order — usually within one minute. Open the watch face settings in the
+    <b>Connect IQ app</b>, enter the code and save. The watermark disappears.<br><br>
+    Didn't get the code, or entered a wrong device code? Just reply to your
+    order email — corrections are handled automatically.
+  </div>
+</div>
+
+<footer><div class="wrap">
+  © 2026 YuanCao Watch Faces ·
+  <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds</a>
+</div></footer>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  // Paddle 价格 ID → 表盘编号（与 function/price_map.json 同源，勿单边修改）
+  var PRICES = {
+    "0002": "pri_01m78cch0j8wscq5bmsqwk7962",
+    "0003": "pri_01m78cckvfceavc50ctcj8530a",
+    "0004": "pri_01m78ccn8gstb6gacexy9t1dsy",
+    "0005": "pri_01m78ccpj8mswr3gb5mxbqrhnw",
+    "0006": "pri_01m78ccqsngkspstmz6fbdbrsj",
+    "0007": "pri_01m78ccs6624cjetp480szvkbt",
+    "0008": "pri_01m78cctf7k0t1wz43zb23hagq",
+    "0009": "pri_01m78ccvvdqjxfvmd84vgtwqqv",
+    "0010": "pri_01m78ccx6skdsn73fbeevah77c",
+    "0011": "pri_01m78ccyerykw4zkrf0t9ar0yh",
+    "0012": "pri_01m78cczs76rnkngmxbmgc11hc",
+    "0013": "pri_01m78cd119f2v6yypb0y9zh88e",
+    "0014": "pri_01m78cd2bnen8b3qzh3ry1jtr3",
+    "0015": "pri_01m78cd3mhw10pv5eh32n1685y"
+  };
+
+  Paddle.Environment.set("production");
+  Paddle.Initialize({ token: "live_ec0e576e25932217ad62acc1b71" });
+
+  // 支持从列表页带参跳转：buy.html?watch=0005
+  (function () {
+    var w = new URLSearchParams(location.search).get("watch");
+    if (w && PRICES[w]) document.getElementById("watch").value = w;
+  })();
+
+  function buy() {
+    var msg = document.getElementById("msg");
+    var watch = document.getElementById("watch").value;
+    var code = document.getElementById("code").value.trim();
+    if (!/^\d{6}$/.test(code)) {
+      msg.textContent = "Please enter the 6-digit number from the red watermark on your watch.";
+      return;
+    }
+    msg.textContent = "";
+    document.getElementById("buyBtn").disabled = true;
+    Paddle.Checkout.open({
+      items: [{ priceId: PRICES[watch], quantity: 1 }],
+      customData: { device_code: code, watch_id: watch }
+    });
+    // 结账弹层可反复打开，恢复按钮
+    setTimeout(function () { document.getElementById("buyBtn").disabled = false; }, 1500);
+  }
+</script>
+
+</body>
+</html>
