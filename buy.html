@@ -88,15 +88,23 @@
 
     <div class="price-row">
       <b>Personal activation code · one device · lifetime updates</b>
-      <span class="price">$10.00</span>
+      <span class="price" id="priceTag">$10.00</span>
+    </div>
+
+    <div class="hint" style="margin:0 0 14px;padding:12px 14px;background:#fff8e6;
+         border:2px solid #f0b429;border-radius:8px">
+      <b style="color:#b8860b">📌 IMPORTANT — check your spam folder:</b>
+      the activation code email <b>usually lands in your SPAM/Junk folder</b>
+      (first-time buyers). Right after payment, please <b>open your email's
+      Spam folder to look for the code</b>. Once you find it there, mark it as
+      <b>"Not Spam"</b> so future emails reach your inbox directly.
     </div>
 
     <div class="hint" style="margin:0 0 14px;padding:10px 12px;background:var(--bg);
          border:1px solid var(--line);border-radius:8px">
       <b style="color:var(--accent)">Delivery by email:</b> your activation code
       is sent to the <b>email address you enter at checkout</b>. Please make sure
-      the address is correct and can receive email — check your spam folder if
-      the code doesn't arrive within a few minutes.
+      the address is correct and can receive email.
     </div>
 
     <button id="buyBtn" onclick="buy()">Continue to secure checkout</button>
@@ -137,6 +145,16 @@
     "0015": "pri_01m78cd3mhw10pv5eh32n1685y"
   };
 
+  // 表盘 → 实售金额（0012 促销价 $1；与 Paddle 后台价格、FC PRODUCTS_JSON 三方一致，
+  // 任何一处改价必须三处同步，否则 webhook 金额校验拒发）
+  var AMOUNTS = { "0012": "1.00" };
+  function updatePrice() {
+    var w = document.getElementById("watch").value;
+    document.getElementById("priceTag").textContent =
+      "$" + (AMOUNTS[w] || "10.00");
+  }
+  document.getElementById("watch").addEventListener("change", updatePrice);
+
   Paddle.Environment.set("production");
   Paddle.Initialize({ token: "live_ec0e576e25932217ad62acc1b71" });
 
@@ -145,6 +163,7 @@
     var w = new URLSearchParams(location.search).get("watch");
     if (w && PRICES[w]) document.getElementById("watch").value = w;
   })();
+  updatePrice();
 
   function buy() {
     var msg = document.getElementById("msg");
